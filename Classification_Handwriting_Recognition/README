@@ -1,0 +1,65 @@
+Classification (Machine Learning)
+=================================
+
+----------------------------------------
+1 Overview
+************
+
+This project is to implement and evaluate classification algorithms. You will implement two different methods of classification and compare their performance with a publicly available package.
+
+----------------------------------------
+2 Classification of Handwritten Numerals
+************
+
+This project is about multi-class classification. The task is handwritten digit recognition where there are ten digits (0-9). 
+
+You are provided with two types of input data, feature vectors and raw images:
+
+1. GSC features extracted from each of the image: each image is represented by a 512-bit vector, the first 192 are G (gradient), the next 192 are S (structural) and the last 128 are C (concavity). 
+
+2. Handwritten digit images: in case you want to experiment with other feature extractors, you are given handwritten images (image type .png). These are segmented images scanned at a resolution of 100ppi and cropped.
+
+The GSC feature extractor was developed at CEDAR/UB. If you are interested in the details see: http:
+//www.cedar.buffalo.edu/~srihari/papers/JFS2008-color.pdf
+
+
+----------------------------------------
+Data set:
+*********
+
+Training Data
+-------------
+Both the feature vectors and images can be found at UB learns. Each digit has 2000 samples available for training. Figure 2 shows variant '0's in the data set.
+
+Testing Data
+-------------
+
+The feature vectors and images correspond to 1500 digit images (150 for each digit). You are expected to predict the labels for the test set and submit a vector of labels.
+
+
+----------------------------------------
+2. Classifiers:
+**************
+You are to implement two different classiers on your own and also choose a publicly available classifier (one among those listed in Appendix A). The three classifiers are to be evaluated and compared using dierent evaluation metrics (see Appendix B). The two classifiers to implement are:
+(a) Logistic Regression (LR)
+(b) Neural Network (NN)
+You are encouraged to implement other classiers, such as Naive Bayes, Bayesian logistic regression, etc, and nd better existing classication packages with comparable performance. You will get extra bonus points in this project for your extra work.
+
+
+---------------------------------------
+Training and Testing:
+*********************
+
+Training
+---------
+Name your training program "train lr.m", "train nn.m" "train blr.m" and so on.
+The input of the training programs is an X = N (D+1) matrix, where N is the number of the training samples and D + 1 is the length of each training sample vector consisting of D features and the corresponding classication label. 
+
+To select the appropriate model parameters for testing, you may want to further decompose the training set into training
+and validation set and tune your parameters using the validation set. Or you can use cross validation on the training set to select your model.
+
+Testing
+---------
+Once you are satised with your model on your training set, for each of the test feature vector provided, the class needs to be predicted using the model you learned. 
+Name your testing program "test lr.m", "test nn.m", "test blr.m" and so on. 
+Your testing programs should take a Y = N0  D matrix as input and output a T = N0  1 vector of classification labels. In testing phase N0 is the size of the testing data set.
